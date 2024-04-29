@@ -148,6 +148,22 @@ background-color: #d1d1d1;
   text-decoration: none;
   transition: all 0.3s ease;
 }
+.profile-image {
+    transition: transform 0.5s ease-in-out;
+}
+
+.rotate {
+    animation: rotateAnimation 2s infinite alternate; /* Apply a CSS animation for rotation */
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-90deg);
+    }
+}
 
 .nav-links li a.nav-link:hover {
   background-color: var(--secondary-color);
