@@ -38,12 +38,6 @@ document.getElementById('downloadResume').addEventListener('click', function(eve
   // Stop the event from propagating
   event.stopPropagation();
 });
-function rotateLeft(image) {
-    image.style.transition = "transform 0.5s ease-in-out";
-    image.style.transform = 'rotate(-90deg)';
-}
-
-function rotateBack(image) {
-    image.style.transition = "transform 0.5s ease-in-out";
-    image.style.transform = 'rotate(0deg)';
+function rotateImage(image) {
+    image.classList.toggle('rotate');
 }
