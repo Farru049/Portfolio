@@ -617,7 +617,7 @@ footer {
   justify-content: center;
   display: flex; /* Ensure profiles are displayed in a row */
   flex-wrap: wrap; /* Allow profiles to wrap to the next line */
-  fill:#000000
+  fill:#000000;
  /* Add padding to the left */
 }
 .profile-card {
