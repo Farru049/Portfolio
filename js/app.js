@@ -38,3 +38,6 @@ document.getElementById('downloadResume').addEventListener('click', function(eve
   // Stop the event from propagating
   event.stopPropagation();
 });
+function rotateImage(image) {
+    image.classList.toggle('rotate');
+}
