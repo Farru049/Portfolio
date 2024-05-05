@@ -212,6 +212,9 @@ background-color: #d1d1d1;
 .bio-title{
   color:palegreen;
 }
+.bio-title p{
+  color-black;
+}
 .bio {
   width: 25rem;
   padding: 0.625rem;
