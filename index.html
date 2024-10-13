@@ -1,188 +1,413 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-R1Qo8TO7wbd4Zk78cNtFUQDO1ZD+CLrSmL5V19qfcDctZSPpuEGYGPy+qZB+My8gMfNDodqeb7GZNxGQ+Hr/Mw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-  <link rel="manifest" href="icons/site.webmanifest">
-  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <title>Mohammad Farhaan Ali | CyberSecurity Enthusiast</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Farhaan Ali | Cybersecurity Enthusiast</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+        }
+
+        .dark-mode {
+            --primary-color: #2980b9;
+            --secondary-color: #27ae60;
+            --text-color: #f4f4f4;
+            --bg-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .custom-shape-divider-bottom-1635179174 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .custom-shape-divider-bottom-1635179174 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+
+        .custom-shape-divider-bottom-1635179174 .shape-fill {
+            fill: var(--bg-color);
+        }
+
+        /* Custom Cursor */
+        #customCursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Curtain Effect */
+        .curtain-closed {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .curtain-open {
+            max-height: 1000px; /* Adjust based on content */
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        /* Animation Classes */
+        .animate-fadeInDown {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
-<body>
-  </div>
-  <nav class="navbar">
-    <div class="container">
-      <h1 class="logo">Mohammad Farhaan Ali</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    <button class="burger-menu" id="burger-menu">
-      <ion-icon class="bars" name="menu-outline"></ion-icon>
-    </button>
-  </nav>
-  <section class="hero" id="about">
-    <img src="undraw_Programming_re_kg9v.png
-" alt="ali" loading="lazy" class="hero-img">
-    <div class="bio animate__animated animate__shakeX">
-      <h2 class="bio-title">About Me</h2>
-      <p style="color: #000;">
-  Enthusiast of Cybersecurity, good at Python, has good problem-solving skills. Sticks to tasks assigned and completes them within the stipulated timelines, ensuring attention to detail.
-</p>
-    </div>
-  </section>
-  <section class="more-about" id="about">
-    <h2>More About Me</h2>
-    <img src="profile-pic (2).png" class="profile-image" onclick="toggleRotation(this)">
-    <ul class="about-points">
-      <li><img src="icons/check-mark-button-svgrepo-com.svg" alt="Star Icon"> Currently I'm Pursuing my Bachelors of Engineering in stream of Artificial Intelligence and DataScience at Chaitanya Bharathi Institute of Technology,Hyderabad.</li>
-      <li><img src="icons/check-mark-button-svgrepo-com.svg" alt="Star Icon"> I have been an active member of the Electoral Literacy Club, where I served for one year, actively promoting awareness about civic engagement and electoral processes among peers.</li>
-      <li><img src="icons/check-mark-button-svgrepo-com.svg" alt="Star Icon"> Additionally, I participated in various technical and extracurricular events organized by the college, including workshops, seminars, and competitions.</li>
-      <li><img src="icons/check-mark-button-svgrepo-com.svg" alt="Star Icon"> These experiences have provided me with valuable insights into democratic principles, leadership, and teamwork dynamics.</li>
-    </ul>
-  </section>
-  <section class="skills" id="skills">
-    <h2 class="skill-header">My Top Skills</h2>
-    <div class="skills-wrapper">
-      <div class="first-set animate__animated animate__pulse">
-        <img src="icons/icons8-html-5.svg" alt="" loading="lazy" class="icon icon-card">
-        <img src="icons/icons8-css3.svg" alt="CSS" loading="lazy" class="icon icon-card">
-        <img src="icons/icons8-javascript.svg" alt="JavaScript" loading="lazy" class="icon icon-card">
-        <img src="icons/icons8-bootstrap.svg" alt="Bootstrap" loading="lazy" class="icon icon-card">
-        <img src="icons/python-svgrepo-com.svg" alt="Python" loading="lazy" class="icon icon-card">
-      </div>
-      <div class="second-set animate__animated animate__pulse">
-        <img src="icons/java-svgrepo-com.svg" alt="Java" loading="lazy" class="icon icon-card">
-        <img src="icons/machine-learning-02-svgrepo-com.svg" alt="Machine Learning" loading="lazy" class="icon icon-card">
-        <img src="icons/django-icon-svgrepo-com.svg" alt="Django" loading="lazy" class="icon icon-card">
-        <img src="icons/kalilinux-svgrepo-com.svg" alt="Kali Linux" loading="lazy" class="icon icon-card">
-      </div>
-    </div>
-  </section>
-  <section class="coding-platform">
-    <h2 class='Coding-header'>Coding Platform Profiles</h2>
-    <div class="profile-container">
-      <div class="profile-card leetcode">
-        <a href="https://leetcode.com/u/farru34/" target="_blank">
-          <img src="icons/leetcode8788.svg" alt="LeetCode" class="profile-icon" />
-          <span>LeetCode</span>
-        </a>
-      </div>
-      <div class="profile-card hackerrank">
-        <a href="https://www.hackerrank.com/profile/alifarhaan655" target="_blank">
-          <img src="icons/hackerrank.svg" alt="HackerRank" class="profile-icon" />
-          <span>HackerRank</span>
-        </a>
-      </div>
-      <div class="profile-card geeksforgeeks">
-        <a href="https://www.geeksforgeeks.org/user/alifarhaan/" target="_blank">
-          <img src="icons/gfg90.svg" alt="Geeks for Geeks" class="profile-icon" />
-          <span>Geeks for Geeks</span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <section class="projects" id="projects">
-    <h2 class="projects-title"> My Projects</h2>
-    <div class="projects-container">
-      <div class="project-container project-card">
-        <img src="images/cat-3695213_1280.webp" alt="Web-based Quiz App" loading="lazy" class="project-pic">
-        <h3 class="project-title">Web-based Quiz App</h3>
-        <class="project-details">
-          <p>HTML for structure, CSS for styling,</p>
-          <p>JavaScript for interactivity,</p>
-          <p>including a quiz feature with score.</p>
-          <a href="https://github.com/Farru049/Quiz-Web-App" target="_blank" class="project-link">Check it Out</a>
-      </div>
-      <div class="project-container project-card">
-        <img src="images/phishing-3390518_640.webp" alt="Phishing Website" loading="lazy" class="project-pic">
-        <h3 class="project-title">Phishing Website Detection</h3>
-        <p class="project-details">
-          <p>Designed a user-friendly website</p>
-          <p>with a Random Forest ML Model</p>
-          <p>for precise Phishing Detection,</p>
-          <p>incorporating URL analysis and content inspection.</p>
-        <a href="https://github.com/Farru049/phishing-detection" target="_blank" class="project-link">Check it Out</a>
-      </div>
-      <div class="project-container project-card">
-        <img src="icons/images.jpeg" alt="greeny-earth" loading="lazy" class="project-pic">
-        <h3 class="project-title">Content Management System</h3>
-        <p class="project-details">
-          A Content Management System (CMS) blends HTML, CSS, and JavaScript for content creation and management. HTML structures content, CSS styles it, and JavaScript adds interactivity. CMS platforms simplify website design and content customization using templates, enabling easy addition, editing of content.
-        </p>
-        <a href="https://github.com/Farru049/content-management-tool/tree/main/cont-mng-tool" target="_blank" class="project-link">Check it Out</a>
-      </div>
-    </div>
-  </section>
-  <section class="contact" id="contact">
-    <h2>Get In Touch With Me</h2>
-    <div class="contact-form-container">
-      <div class="contact-form">
-        <form action="https://formspree.io/f/xvoelokd" method="POST" onsubmit="return validateForm()">
-  <div class="form-control">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="sender-name" placeholder="Enter Your Name" class="input-field" required>
-  </div>
-  <div class="form-control">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="sender-email" placeholder="Enter Your Email" class="input-field" required>
-  </div>
-  <div class="form-control">
-    <label for="message">Message</label>
-    <textarea id="message" cols="60" rows="10" placeholder="Enter Your Message" name="message" class="input-field" required></textarea>
-  </div>
-  <input type="submit" value="Submit" id="submit-btn" class="submit-btn">
-</form>
+<body class="antialiased">
 
-<script>
-  function validateForm() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
+    <div id="customCursor"></div>
 
-    if (name.trim() == '' || email.trim() == '' || message.trim() == '') {
-      alert('Please fill out all fields.');
-      return false; // Prevent form submission
-    }
+    <!-- Navigation -->
+    <nav class="fixed w-full z-10 bg-opacity-90 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-gray-900 dark:text-white">Mohammad Farhan Ali</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        <button id="darkModeToggle" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    // Add email validation if needed
-    // You can use regular expressions or a more advanced validation library
+    <!-- Hero Section -->
+    <section class="hero-bg text-white min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="container mx-auto text-center z-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeInDown">Mohammad Farhaan Ali</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp">Cybersecurity Enthusiast & AI/Data Science Student</p>
+            <a href="#contact" class="bg-white text-gray-900 py-2 px-6 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300 animate-fadeInUp">Get in Touch</a>
+        </div>
+        <div class="custom-shape-divider-bottom-1635179174">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
 
-    return true; // Allow form submission
-  }
-</script>
-  </section>
-  <div class="socials">
-    <a href="https://twitter.com/InvisbleChirp" target="_blank" class="social-icon" id="twitter">
-      <img src="icons/icons8-twitter-circled.gif" alt="Twitter" loading="lazy" class="socicon" />
-    </a>
-    <a href="https://www.linkedin.com/in/farhaan-ali-753581241/" target="_blank" class="social-icon" id="linkedin">
-      <img src="icons/icons8-linkedin-circled.gif" alt="Linkedin" loading="lazy" class="socicon" />
-    </a>
-    <a href="https://github.com/farru049" target="_blank" class="social-icon" id="github">
-      <img src="icons/icons8-github.gif" alt="Github" class="socicon" />
-    </a>
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 animate-fadeInUp">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="profile-pic (2).png" alt="Mohammad Farhaan Ali" class="rounded-full mx-auto animate-fadeInUp" width="300" height="300">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-4 animate-fadeInUp">Hello! I'm Mohammad Farhaan Ali, a passionate cybersecurity enthusiast and AI/Data Science student. I'm dedicated to securing digital landscapes and exploring the fascinating world of artificial intelligence.</p>
+                    <p class="text-lg mb-4 animate-fadeInUp">Currently pursuing my Bachelor's degree in AI and Data Science, I'm actively involved in the Electoral Literacy Club, participating in various technical and extracurricular events.</p>
+                    <p class="text-lg animate-fadeInUp">My goal is to contribute to the ever-evolving field of cybersecurity while leveraging AI to create innovative solutions for a safer digital future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section with Curtain Effect -->
+    <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 animate-fadeInUp">Skills</h2>
+            <!-- My Skills Card -->
+            <div 
+                class="cursor-pointer bg-gradient-to-r from-green-400 to-blue-500 text-white py-8 px-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 animate-fadeInDown"
+                id="skills-card"
+            >
+                <h2 class="text-3xl font-semibold">Click here for skills</h2>
+            </div>
+
+            <!-- Hidden Skills List -->
+            <div 
+                id="skills-list" 
+                class="mt-6 curtain-closed grid grid-cols-2 sm:grid-cols-3 gap-8 text-center animate-fadeInUp"
+            >
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <i class="fab fa-html5 fa-4x text-red-600 mb-4"></i>
+                    <p class="text-lg font-semibold">HTML</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                  <i class="fab fa-css3-alt fa-4x text-blue-600 mb-4"></i>
+                  <p class="text-lg font-semibold">CSS</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <i class="fa-brands fa-bootstrap fa-4x text-pink-600 mb-4"></i>
+                    <p class="text-lg font-semibold">BootStrap</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <i class="fa-solid fa-globe fa-4x text-blue-600 mb-4"></i>
+                    <p class="text-lg font-semibold">Django</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <i class="fab fa-js fa-4x text-yellow-500 mb-4"></i>
+                    <p class="text-lg font-semibold">JavaScript</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                  <i class="fab fa-node fa-4x text-green-600 mb-4"></i>
+                  <p class="text-lg font-semibold">Node.js</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <i class="fab fa-python fa-4x text-yellow-300 mb-4"></i>
+                    <p class="text-lg font-semibold">Python</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <i class="fa-solid fa-hat-cowboy fa-4x text-green-700 mb-4"></i>
+                    <p class="text-lg font-semibold">Ethical Hacking</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <i class="fa-brands fa-linux fa-4x text-black-600 mb-4"></i>
+                    <p class="text-lg font-semibold">Linux</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-shield-alt fa-4x text-gray-800 mb-4"></i>
+                    <p class="text-lg font-semibold">Cybersecurity</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-user-shield fa-4x text-red-800 mb-4"></i>
+                    <p class="text-lg font-semibold">Penetration Testing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding Profiles Section -->
+    <section id="coding-profiles" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fadeInUp">Coding Profiles</h2>
+            <div class="flex flex-wrap justify-center space-x-8">
+                <div class="profile-card text-center bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 animate-fadeInUp">
+                    <i class="fab fa-github text-4xl mb-4 text-gray-800 dark:text-white"></i>
+                    <h3 class="text-xl font-semibold mb-2">GitHub</h3>
+                    <a href="https://github.com/Farru049" target="_blank" class="text-blue-500 hover:text-blue-600 font-semibold">github.com/Farru049</a>
+                </div>
+                <div class="profile-card text-center bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 animate-fadeInUp">
+                    <i class="fab fa-hackerrank text-4xl mb-4 text-green-600"></i>
+                    <h3 class="text-xl font-semibold mb-2">HackerRank</h3>
+                    <a href="https://www.hackerrank.com/profile/alifarhaan655" target="_blank" class="text-blue-500 hover:text-blue-600 font-semibold">hackerrank.com/profile/alifarhaan655</a>
+                </div>
+                <div class="profile-card text-center bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 animate-fadeInUp">
+                    <i class="fa fa-code text-4xl mb-4 text-pink-600"></i>
+                    <h3 class="text-xl font-semibold mb-2">Codolio</h3>
+                    <a href="https://codolio.com/profile/DkLr4JNn" target="_blank" class="text-blue-500 hover:text-blue-600 font-semibold">https://codolio.com/profile/DkLr4JNn</a>
+                </div>
+                <div class="profile-card text-center bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 animate-fadeInUp">
+                    <i class="fab fa-leetcode text-4xl mb-4 text-blue-600"></i>
+                    <h3 class="text-xl font-semibold mb-2">LeetCode</h3>
+                    <a href="https://leetcode.com/u/farru34/" target="_blank" class="text-blue-500 hover:text-blue-600 font-semibold">leetcode.com/farru34</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Projects Section -->
+<section id="projects" class="py-20">
+  <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 animate-fadeInUp">Projects</h2>
+      <p class="text-lg text-gray-700 text-center mb-12 animate-fadeInUp">Here are some projects I've worked on:</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1 -->
+          <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 animate-fadeInUp">
+              <div class="flex justify-center mt-4">
+                  <i class="fas fa-question-circle fa-3x text-blue-600"></i>
+              </div>
+              <img src="pexels-leeloothefirst-5428835.jpg" alt="Web-based Quiz App" class="w-full h-48 object-cover mt-4">
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">Web-based Quiz App</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-4">A dynamic quiz application built with HTML, CSS, and JavaScript, featuring real-time scoring and responsive design.</p>
+                  <a href="https://github.com/Farru049/Quiz-Web-App" target="_blank" class="text-blue-500 hover:text-blue-600 font-semibold">Learn More</a>
+              </div>
+          </div>
+          
+          <!-- Project 2 -->
+          <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 animate-fadeInUp">
+              <div class="flex justify-center mt-4">
+                  <i class="fas fa-microphone fa-3x text-blue-600"></i>
+              </div>
+              <img src="pexels-jonathanborba-14309816.jpg" alt="Jarvis Desktop Voice Assistant" class="w-full h-48 object-cover mt-4">
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">Jarvis Desktop Voice Assistant</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-4">A smart voice assistant built in Python that fetches weather updates, provides news headlines, and responds to commands using speech recognition and text-to-speech.</p>
+                  <a href="https://github.com/Farru049/Jarvis-Assistant" target="_blank" class="text-blue-500 hover:text-blue-600 font-semibold">Learn More</a>
+              </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 animate-fadeInUp">
+              <div class="flex justify-center mt-4">
+                  <i class="fas fa-lock fa-3x text-red-600"></i>
+              </div>
+              <img src="pexels-tima-miroshnichenko-5380651.jpg" alt="Phishing Website Detection" class="w-full h-48 object-cover mt-4">
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">Phishing Website Detection</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-4">Utilizes a Random Forest ML Model for detecting phishing sites with high accuracy, enhancing online security.</p>
+                  <a href="https://github.com/Farru049/phishing-detection" target="_blank" class="text-blue-500 hover:text-blue-600 font-semibold">Learn More</a>
+              </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 animate-fadeInUp">
+              <div class="flex justify-center mt-4">
+                  <i class="fas fa-cogs fa-3x text-gray-600"></i>
+              </div>
+              <img src="pexels-pixabay-262508.jpg" alt="Content Management System" class="w-full h-48 object-cover mt-4">
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">Content Management System</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-4">A robust web app for creating and managing content, featuring user authentication and a RESTful API.</p>
+                  <a href="https://github.com/Farru049/content-management-tool/tree/main/cont-mng-tool" target="_blank" class="text-blue-500 hover:text-blue-600 font-semibold">Learn More</a>
+              </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 animate-fadeInUp">
+              <div class="flex justify-center mt-4">
+                  <i class="fas fa-users fa-3x text-green-600"></i>
+              </div>
+              <img src="pexels-karolina-grabowska-5632379.jpg" alt="Customer Segmentation" class="w-full h-48 object-cover mt-4">
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">Customer Segmentation</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-4">Implemented a K-Means clustering model to segment customers based on their purchasing behavior for targeted marketing strategies.</p>
+                  <a href="https://github.com/Farru049/customer-segmentation" target="_blank" class="text-blue-500 hover:text-blue-600 font-semibold">Learn More</a>
+              </div>
+          </div>
+
+      </div>
   </div>
-  <i class="scroll-up" id="scroll-up"><img src="assets/icons/icons8-upward-arrow.gif" class="socicon up-arrow" alt=""></i>
-  <footer>
-    <p class="copy">&copy; Copyright 2024</p>
-    <p class="copy">Built with &#x2661; by <a href="https://twitter.com/InvisbleChirp" target="_blank">FARHAAN ALI</a></p>
-  </footer>
-  <script src="js/app.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fadeInUp">Get in Touch</h2>
+            <div class="max-w-lg mx-auto">
+                <form action="https://formspree.io/f/xvoelokd" method="POST" class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg animate-fadeInUp">
+                    <div class="mb-6">
+                        <label for="name" class="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white" placeholder="Enter Your Name" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">Your Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white" placeholder="Enter Your Email" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white" placeholder="Enter Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-800">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2024 Mohammad Farhaan Ali. All Rights Reserved.</p>
+            <div class="mt-4">
+                <a href="https://github.com/Farru049" target="_blank" class="mx-2 text-gray-400 hover:text-white">
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/farhaan-ali-753581241/" target="_blank" class="mx-2 text-gray-400 hover:text-white">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+                <a href="https://twitter.com/InvisbleChirp" target="_blank" class="mx-2 text-gray-400 hover:text-white">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Custom Cursor
+        const cursor = document.getElementById('customCursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.top = e.clientY + 'px';
+            cursor.style.left = e.clientX + 'px';
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const rootElement = document.documentElement;
+
+        darkModeToggle.addEventListener('click', () => {
+            rootElement.classList.toggle('dark-mode');
+        });
+
+        // Curtain Effect for Skills Section
+        const skillsCard = document.getElementById('skills-card');
+        const skillsList = document.getElementById('skills-list');
+
+        skillsCard.addEventListener('click', () => {
+            skillsList.classList.toggle('curtain-open');
+            skillsList.classList.toggle('curtain-closed');
+        });
+
+        // Optional: Animate skill progress bars on scroll (if using progress bars)
+        // Currently not required as we have removed the progress bars
+    </script>
 </body>
 </html>
